@@ -6,7 +6,6 @@
 
 .pokedex-container{
     display: flex;
-    justify-content: space-between;
     width: 60vw;
     flex-wrap: wrap;
     gap: 30px;
