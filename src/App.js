@@ -1,7 +1,7 @@
 import { memo ,useEffect, useState } from 'react';
 import './App.css';
 
-const Pokemon = memo(function Pokemon({name, url}) {
+const Pokemon = memo(({name, url}) => {
   const [pokeDetails, setPokeDetails] = useState([])
 
   useEffect(() => {
@@ -31,10 +31,6 @@ const Pokemon = memo(function Pokemon({name, url}) {
     </div>
   )
 })
-//({name, url}) =>
-
-
-
 
 export const  App = () => {
   const [allPokemons, setAllPokemons] = useState([])
@@ -44,7 +40,9 @@ export const  App = () => {
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=200')
     .then(json => json.json())
     .then(response => { 
-      return setAllPokemons(response.results)}) //retorna results: nome e url
+      return setAllPokemons(response.results.sort((a, b) => {
+        return a.name.localeCompare(b.name)
+     }))}) //retorna results: nome e url
   }, [])
   
   useEffect(() => {
@@ -64,7 +62,7 @@ export const  App = () => {
       <input className='input-search'
       type='search' 
       onChange={(e) => handleSearch(e)} 
-      placeholder='Find your favorite:'/> 
+      placeholder='Find your favourite:'/> 
 
       <div className='pokedex-container'> 
         
