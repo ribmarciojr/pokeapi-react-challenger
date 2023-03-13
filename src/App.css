@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.pokedex-container{
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0 auto;
+        
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pokdex-content-container{
+    display: flex;
+    align-items: center;
+    background: rgba(51, 41, 41, 0.356);    
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+    flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.pokdex-content-container:hover {
+    transform: scale(1.05);
 }
 
-.App-link {
-  color: #61dafb;
+.poke-img-container{
+    display: flex;
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poke-img-container img {
+    margin: 0 auto;
+    
+}
+
+.poke-text-container {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.poke-text-container h2{
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.poke-text-container p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.input-search{
+    margin: 30px;
+    line-height: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1.5em;
 }
